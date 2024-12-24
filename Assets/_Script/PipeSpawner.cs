@@ -26,7 +26,7 @@ public class PipeSpawner : MonoBehaviour
             return;
         }
         int ramdomPipe = Random.Range(0, 4);
-        float ramdomPos = Random.Range(-2f, 2.5f);
+        float ramdomPos = Random.Range(-1.8f, 2.7f);
 
         switch (ramdomPipe)
         {

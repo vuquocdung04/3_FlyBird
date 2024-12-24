@@ -710,7 +710,7 @@ MonoBehaviour:
   prefab1: {fileID: 4159126923663803352, guid: 236366f94eba690459687e99e92a1c12, type: 3}
   prefab2: {fileID: 1981946953790513087, guid: 7d2fbf483d9ee324c8a82df8bd4ec504, type: 3}
   prefab3: {fileID: 1044445192220914322, guid: 20d85d989c54d524aa425f726addd6ff, type: 3}
-  sizeSpawn: 4
+  sizeSpawn: 7
   spawnList: []
 --- !u!114 &681117667 stripped
 MonoBehaviour:
@@ -1895,6 +1895,10 @@ PrefabInstance:
     - target: {fileID: 3499728197935974631, guid: 4be1c25dd0bfa5f429a46841f72ec250, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499728197935974631, guid: 4be1c25dd0bfa5f429a46841f72ec250, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3650219672391933041, guid: 4be1c25dd0bfa5f429a46841f72ec250, type: 3}
       propertyPath: m_LocalPosition.x
