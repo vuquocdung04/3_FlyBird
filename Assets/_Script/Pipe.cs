@@ -6,12 +6,11 @@ public class Pipe : MonoBehaviour
 {
     public float pipe_speed = 2f;
     Vector2 getPos;
-
     int dem = 0;
 
     private void Start()
     {
-        getPos = this.transform.position;
+        getPos = transform.position;
     }
 
     private void Update()
@@ -31,17 +30,24 @@ public class Pipe : MonoBehaviour
             this.transform.Translate(Vector2.left * pipe_speed * Time.deltaTime);
         }
         else
+        {
             this.transform.Translate(Vector2.right * pipe_speed * Time.deltaTime);
+        }
     }
 
     void RePos()
     {
         float ramdomPos = Random.Range(-2f, 2.5f);
-        if (this.transform.position.x < -37f) // + 1pipe -> tang 7
+        if (this.transform.position.x < -37f)
         {
             dem++;
             this.transform.Rotate(0, 0, 180);
             this.transform.position = new Vector2(getPos.x, ramdomPos);
         }
+    }
+
+    void ChangeSpeed()
+    {
+
     }
 }

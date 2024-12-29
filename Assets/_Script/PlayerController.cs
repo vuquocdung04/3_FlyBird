@@ -11,17 +11,11 @@ public class PlayerController : MonoBehaviour
 
 
     public bool checkGameOver;
-    public Score_Manager score_manager;
 
-
-    public Audio_Manager audio_manager;
-
-    private void Start()
+    public void Init(PlayerContrains name)
     {
-        player_rb2d = GetComponent<Rigidbody2D>();
-        player_ani = GetComponent<Animator>();
-        score_manager = FindFirstObjectByType<Score_Manager>();
-        audio_manager = FindFirstObjectByType<Audio_Manager>();
+        player_ani = GetComponentInChildren<Animator>();
+        player_rb2d = GetComponentInChildren<Rigidbody2D>();
     }
 
     private void Update()
@@ -32,6 +26,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         RotateFly();
+        
     }
 
     void Fly()
@@ -39,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && !checkGameOver)
         {
             player_rb2d.velocity = Vector2.up * fly_speed;
-            audio_manager.Sound_Click();
+            GameController.Instance.PlayerContrains.audioManager.Sound_Click();
         }
     }
 
@@ -62,14 +57,14 @@ public class PlayerController : MonoBehaviour
         if (collision.CompareTag("Pipe") || collision.CompareTag("Dir"))
         {
             checkGameOver = true;
-            audio_manager.Sound_Hit();  
+            GameController.Instance.PlayerContrains.audioManager.Sound_Hit();  
             Time.timeScale = 0f;
         }
         if (collision.CompareTag("Score"))
         {
-            score_manager.currentScore++;
-            score_manager.UpdateHighScore();
-            audio_manager.Sound_Point();
+            GameController.Instance.PlayerContrains.scoreManager.currentScore++;
+            GameController.Instance.PlayerContrains.scoreManager.UpdateHighScore();
+            GameController.Instance.PlayerContrains.audioManager.Sound_Point();
         }
     }
 }

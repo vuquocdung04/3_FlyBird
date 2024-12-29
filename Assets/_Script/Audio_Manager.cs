@@ -9,8 +9,6 @@ public class Audio_Manager : MonoBehaviour
     public AudioClip au_point;
     public AudioClip au_hit;
     public AudioClip au_die;
-
-
     public void Sound_Click()
     {
         aus.PlayOneShot(au_click);

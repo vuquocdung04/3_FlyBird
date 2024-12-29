@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 public class UI_Manager : MonoBehaviour
 {
     public GameObject PopUp_EndGame;
-
-    public PlayerController playerController;
-
     private void Start()
     {
         PopUp_EndGame.SetActive(false);
@@ -20,7 +17,7 @@ public class UI_Manager : MonoBehaviour
     }
     void Check_EndGame()
     {
-        if (playerController.checkGameOver)
+        if (GameController.Instance.PlayerContrains.playerController.checkGameOver)
         {
             PopUp_EndGame.SetActive(true);
         }
